@@ -17,7 +17,8 @@ class MainColumn extends Component{
 
 
     addElements () {
-        return this.state.messages.map((massages,i) => (
+        let reversedMessages = this.state.messages;
+        return reversedMessages.reverse().map((massages,i) => (
             <div className="messages" key={i}>
                 Новое сообщение:
                 <div className="message" key={i}>{massages}</div>
