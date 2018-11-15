@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #E7ECF0;
+    text-align: center;
+}
+
+header{
+    background: #ffffff;
+    text-align: center;
+
+}
+
+.logo{
+    color: #3399ff;
+    font-size: 40px;
+    text-align: center;
+    font-family:'Anton', sans-serif;
+}
+
+.description{
+    color: #3399ff;
+    padding: 10px;
+}
+
+.mainColumn{
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 540px;
+}
+
+.textField{
+    margin-top: 10px;
+    background: #EAF5FC;
+    display: flex;
+    flex-direction: row;
+}
+
+.textField textarea{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+    width: 80%;
+    border: 1px solid #3399ff;
+    border-radius: 5px;
+    resize: none;
+}
+
+::-webkit-input-placeholder {
+    color: #3399ff;
+}
+
+:focus::-webkit-input-placeholder {
+    color: lightgray;
+}
+
+.twunt {
+    font-size: 15px;
+    font-weight: bold;
+    background: #3399ff;
+    margin-top: 15px;
+    margin-right: 10px;
+    color: white;
+    height: 30px;
+    width: 70px;
+    border-radius: 15px;
+}
+
+.messages{
+    text-align: left;
+    padding: 3px;
+    margin-bottom: 4px;
+    background: white;
+    color: slategrey;
+}
+
+.message{
+    color: black;
+}
