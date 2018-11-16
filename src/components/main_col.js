@@ -7,6 +7,7 @@ class MainColumn extends Component{
     constructor(props) {
         super(props);
         this.state = {
+            name: prompt('Введите имя',' '),
             value: ' ',
             messages: []
         };
@@ -18,13 +19,14 @@ class MainColumn extends Component{
 
     addElements () {
         let reversedMessages = this.state.messages;
-        return reversedMessages.reverse().map((massages,i) => (
+
+        return reversedMessages.map((message,i) => (
             <div className="messages" key={i}>
-                Новое сообщение:
-                <div className="message" key={i}>{massages}</div>
+                Новое сообщение от {this.state.name}:
+                <div className="message" key={i}>{message}</div>
             </div>
 
-        ));
+        )).reverse();
     }
 
 
