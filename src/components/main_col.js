@@ -7,8 +7,8 @@ class MainColumn extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            name: prompt('Введите имя',' '),
-            value: ' ',
+            // name: prompt('Введите имя',' '),
+            value: '',
             messages: []
         };
 
@@ -22,7 +22,7 @@ class MainColumn extends Component{
 
         return reversedMessages.map((message,i) => (
             <div className="messages" key={i}>
-                Новое сообщение от {this.state.name}:
+                {/*Новое сообщение от {this.state.name}:*/}
                 <div className="message" key={i}>{message}</div>
             </div>
 
@@ -35,16 +35,31 @@ class MainColumn extends Component{
     }
 
     handleSubmit(event) {
+
+        let serialObj = JSON.stringify(this.state);
+        localStorage.setItem("myKey", serialObj);
+        // let returnObj = JSON.parse(localStorage.getItem("myKey"));
+        // this.setState({
+        //     value: returnObj.value,
+        //     messages: returnObj.messages
+        // });
+
         let newMessage = [...this.state.messages, this.state.value];
         this.setState({
-            messages:newMessage
+            messages:newMessage,
+            value: ''
         });
 
-        console.log(this.state.value);
         event.preventDefault();
     }
 
     render(){
+
+        let returnObj = JSON.parse(localStorage.getItem("myKey"));
+        this.setState({
+            value: returnObj.value,
+            messages: returnObj.messages
+        });
 
         return (
             <div className="mainColumn">

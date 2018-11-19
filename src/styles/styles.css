@@ -69,7 +69,8 @@ header{
 
 .messages{
     text-align: left;
-    padding: 3px;
+    font-size: 14px;
+    padding: 10px;
     margin-bottom: 4px;
     background: white;
     color: slategrey;
@@ -77,4 +78,5 @@ header{
 
 .message{
     color: black;
+    font-size: 17px;
 }
