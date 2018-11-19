@@ -10,23 +10,23 @@ class MainColumn extends Component{
 
         super(props);
 
-        this.state ={
-            value: '',
-            messages: []
-        };
+        // this.state ={
+        //     value: '',
+        //     messages: []
+        // };
 
-        // if (localStorage.getItem("myKey") === null) {
-        //     this.state = {
-        //         value: '',
-        //         messages: []
-        //     };
-        //
-        // } else {
-        //     this.state = {
-        //         value: returnObj.state.value,
-        //         messages: returnObj.state.message
-        //     };
-        // }
+        if (localStorage.getItem("myKey") === null) {
+            this.state = {
+                value: '',
+                messages: []
+            };
+
+        } else {
+            this.state = {
+                value: returnObj.value,
+                messages: returnObj.message
+            };
+        }
 
         console.log(returnObj);
 
