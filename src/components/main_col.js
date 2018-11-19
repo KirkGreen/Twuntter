@@ -5,11 +5,13 @@ import '../styles/styles.css'
 class MainColumn extends Component{
 
     constructor(props) {
+        let returnObj = JSON.parse(localStorage.getItem("myKey"));
+
         super(props);
         this.state = {
             // name: prompt('Введите имя',' '),
-            value: '',
-            messages: []
+            value: returnObj.value,
+            messages: returnObj.messages
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,31 +37,19 @@ class MainColumn extends Component{
     }
 
     handleSubmit(event) {
-
-        let serialObj = JSON.stringify(this.state);
-        localStorage.setItem("myKey", serialObj);
-        // let returnObj = JSON.parse(localStorage.getItem("myKey"));
-        // this.setState({
-        //     value: returnObj.value,
-        //     messages: returnObj.messages
-        // });
-
         let newMessage = [...this.state.messages, this.state.value];
         this.setState({
             messages:newMessage,
             value: ''
         });
 
+        let serialObj = JSON.stringify(this.state);
+        localStorage.setItem("myKey", serialObj);
+
         event.preventDefault();
     }
 
     render(){
-
-        let returnObj = JSON.parse(localStorage.getItem("myKey"));
-        this.setState({
-            value: returnObj.value,
-            messages: returnObj.messages
-        });
 
         return (
             <div className="mainColumn">
