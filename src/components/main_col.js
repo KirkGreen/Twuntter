@@ -5,14 +5,30 @@ import '../styles/styles.css'
 class MainColumn extends Component{
 
     constructor(props) {
+
         let returnObj = JSON.parse(localStorage.getItem("myKey"));
 
         super(props);
-        this.state = {
-            // name: prompt('Введите имя',' '),
-            value: returnObj.value,
-            messages: returnObj.messages
+
+        this.state ={
+            value: '',
+            messages: []
         };
+
+        // if (localStorage.getItem("myKey") === null) {
+        //     this.state = {
+        //         value: '',
+        //         messages: []
+        //     };
+        //
+        // } else {
+        //     this.state = {
+        //         value: returnObj.state.value,
+        //         messages: returnObj.state.message
+        //     };
+        // }
+
+        console.log(returnObj);
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,7 +40,7 @@ class MainColumn extends Component{
 
         return reversedMessages.map((message,i) => (
             <div className="messages" key={i}>
-                {/*Новое сообщение от {this.state.name}:*/}
+                Новое сообщение от Kirill:
                 <div className="message" key={i}>{message}</div>
             </div>
 
