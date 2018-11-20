@@ -25,7 +25,7 @@ class MainColumn extends Component{
         } else {
             this.state = {
                 value: '',
-                messages: returnObj.messages
+                messages: returnObj
             };
             console.log(1)
         }
@@ -44,7 +44,7 @@ class MainColumn extends Component{
 
         return reversedMessages.map((message,i) => (
             <div className="messages" key={i}>
-                Новое сообщение от Kirill:
+                Новое сообщение:
                 <div className="message" key={i}>{message}</div>
             </div>
 
