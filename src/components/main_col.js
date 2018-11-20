@@ -6,7 +6,7 @@ class MainColumn extends Component{
 
     constructor(props) {
 
-        let returnObj = JSON.parse(localStorage.getItem("myKey"));
+        let returnObj = JSON.parse(localStorage.getItem("messages"));
 
         super(props);
 
@@ -15,17 +15,19 @@ class MainColumn extends Component{
         //     messages: []
         // };
 
-        if (localStorage.getItem("myKey") === null) {
+        if (localStorage.getItem("messages") === null) {
             this.state = {
                 value: '',
                 messages: []
             };
+            console.log(0)
 
         } else {
             this.state = {
-                value: returnObj.value,
-                messages: returnObj.message
+                value: '',
+                messages: returnObj.messages
             };
+            console.log(1)
         }
 
         console.log(returnObj);
@@ -37,6 +39,8 @@ class MainColumn extends Component{
 
     addElements () {
         let reversedMessages = this.state.messages;
+
+        console.log(reversedMessages);
 
         return reversedMessages.map((message,i) => (
             <div className="messages" key={i}>
@@ -59,8 +63,8 @@ class MainColumn extends Component{
             value: ''
         });
 
-        let serialObj = JSON.stringify(this.state);
-        localStorage.setItem("myKey", serialObj);
+        let serialObj = JSON.stringify(newMessage);
+        localStorage.setItem("messages", serialObj);
 
         event.preventDefault();
     }
