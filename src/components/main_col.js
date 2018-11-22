@@ -10,11 +10,6 @@ class MainColumn extends Component{
 
         super(props);
 
-        // this.state ={
-        //     value: '',
-        //     messages: []
-        // };
-
         if (localStorage.getItem("messages") === null) {
             this.state = {
                 value: '',
@@ -82,7 +77,7 @@ class MainColumn extends Component{
                     <input
                         type='submit'
                         className="twunt"
-                        value="Twunt"
+                        // value="Twunt"
                     />
                 </form>
 
