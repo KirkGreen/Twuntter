@@ -82,33 +82,32 @@ header{
 
 .messages{
     text-align: left;
-    font-size: 14px;
+    font-size: 12px;
     padding: 10px;
     margin-bottom: 4px;
     margin-top: 4px;
     background: white;
-    color: slategrey;
+    color: dimgray;
 
-    opacity: 1;
+    transform: translateX(0%);
+
 }
 
 .messages.active,
-.messages-enter.messages-enter-active {
-    background: #EAF5FC;
-    color: #EAF5FC;
-    transition: all .5s ease-in;
-    opacity: 0;
+.messages-enter {
+    transition: all .4s ease-in;
+    transform: translateX(-100%);
+}
 
+.messages-enter-active{
+    transform: translateX(-100%);
 }
 
 .messages-enter-done.active{
-    background: white;
-    color: slategrey;
-    opacity: 1;
-
+    transform: translateX(0%);
 }
 
 .message{
      color: black;
-     font-size: 17px;
+     font-size: 19px;
  }

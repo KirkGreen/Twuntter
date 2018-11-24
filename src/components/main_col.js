@@ -42,7 +42,7 @@ class MainColumn extends Component{
         return reversedMessages.map((message,i) => (
             <CSSTransition
                 classNames="messages"
-                timeout={650}
+                timeout={550}
                 key={i}
                 onEntered={ (node) =>{
                     node.classList.add("active")
@@ -50,7 +50,7 @@ class MainColumn extends Component{
             >
 
                 <div className="messages" key={i}>
-                    Новое сообщение:
+                    New message:
                     <div className="message" key={i}>{message}</div>
                 </div>
 
