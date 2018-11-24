@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import '../styles/styles.css'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 
 
 class MainColumn extends Component{
@@ -38,10 +40,21 @@ class MainColumn extends Component{
         console.log(reversedMessages);
 
         return reversedMessages.map((message,i) => (
-            <div className="messages" key={i}>
-                Новое сообщение:
-                <div className="message" key={i}>{message}</div>
-            </div>
+            <CSSTransition
+                classNames="messages"
+                timeout={650}
+                key={i}
+                onEntered={ (node) =>{
+                    node.classList.add("active")
+                }}
+            >
+
+                <div className="messages" key={i}>
+                    Новое сообщение:
+                    <div className="message" key={i}>{message}</div>
+                </div>
+
+            </CSSTransition>
 
         )).reverse();
     }
@@ -77,11 +90,17 @@ class MainColumn extends Component{
                     <input
                         type='submit'
                         className="twunt"
-                        // value="Twunt"
+                        value="Twunt"
                     />
                 </form>
 
-                <div>{this.addElements()}</div>
+                <TransitionGroup
+                    component="div"
+                    className="list"
+                >
+                    {this.addElements()}
+                </TransitionGroup>
+
 
             </div>
         )

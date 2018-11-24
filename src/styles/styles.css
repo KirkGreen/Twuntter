@@ -11,12 +11,22 @@ header{
 
 }
 
+@keyframes logo {
+    from{color: #3399ff}
+    50%{color: slategrey}
+    to{color: #3399ff}
+}
+
 .logo{
     color: #3399ff;
     font-size: 40px;
     text-align: center;
     font-family:'Anton', sans-serif;
+
+    animation: logo 10s ease-in-out infinite;
 }
+
+
 
 .description{
     color: #3399ff;
@@ -45,6 +55,7 @@ header{
     border: 1px solid #3399ff;
     border-radius: 5px;
     resize: none;
+    outline: none;
 }
 
 ::-webkit-input-placeholder {
@@ -65,6 +76,8 @@ header{
     height: 30px;
     width: 70px;
     border-radius: 15px;
+    outline: none;
+
 }
 
 .messages{
@@ -75,9 +88,27 @@ header{
     margin-top: 4px;
     background: white;
     color: slategrey;
+
+    opacity: 1;
+}
+
+.messages.active,
+.messages-enter.messages-enter-active {
+    background: #EAF5FC;
+    color: #EAF5FC;
+    transition: all .5s ease-in;
+    opacity: 0;
+
+}
+
+.messages-enter-done.active{
+    background: white;
+    color: slategrey;
+    opacity: 1;
+
 }
 
 .message{
-    color: black;
-    font-size: 17px;
-}
+     color: black;
+     font-size: 17px;
+ }
