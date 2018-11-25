@@ -2,8 +2,6 @@ import React, {Component} from "react";
 import '../styles/styles.css'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-
-
 class MainColumn extends Component{
 
     constructor(props) {
@@ -50,8 +48,13 @@ class MainColumn extends Component{
             >
 
                 <div className="messages" key={i}>
-                    New message:
-                    <div className="message" key={i}>{message}</div>
+                    <img src={require('../img-twuntter/user_6.png')} alt="" width={50} height={50}/>
+
+                    <div>
+                        <div className="user_name">User01</div>
+                        <div className="message" key={i}>{message}</div>
+                    </div>
+
                 </div>
 
             </CSSTransition>

@@ -81,26 +81,45 @@ header{
 }
 
 .messages{
+
     text-align: left;
-    font-size: 12px;
     padding: 10px;
     margin-bottom: 4px;
     margin-top: 4px;
     background: white;
-    color: dimgray;
 
     transform: translateX(0%);
 
+    display: flex;
+    flex-direction: row;
 }
+
+
+.user_name{
+    color: dimgray;
+    font-size: 15px;
+}
+
+.user_name:hover{
+    color: #3399ff;
+    cursor: default;
+}
+
+img{
+    border-radius: 55% ;
+    border: 3px solid #3399ff;
+    margin-right: 15px;
+}
+
 
 .messages.active,
 .messages-enter {
-    transition: all .4s ease-in;
-    transform: translateX(-100%);
+    transition: all .8s ease-in;
+    transform: translateX(-250%);
 }
 
 .messages-enter-active{
-    transform: translateX(-100%);
+    transform: translateX(-250%);
 }
 
 .messages-enter-done.active{
