@@ -89,11 +89,13 @@ header{
     background: white;
 
     transform: translateX(0%);
+    opacity: 1;
 
-    display: flex;
-    flex-direction: row;
 }
 
+.user{
+    text-align: center;
+}
 
 .user_name{
     color: dimgray;
@@ -108,25 +110,39 @@ header{
 img{
     border-radius: 55% ;
     border: 3px solid #3399ff;
-    margin-right: 15px;
+    margin: 0 auto;
 }
 
+.users_content{
+    display: flex;
+    flex-direction: row;
+}
 
 .messages.active,
 .messages-enter {
-    transition: all .8s ease-in;
-    transform: translateX(-250%);
+    transition: all .4s ease-in;
+    transform: translateX(-100%);
+    opacity: 0;
 }
 
 .messages-enter-active{
-    transform: translateX(-250%);
+    transform: translateX(-100%);
+    opacity: 0;
 }
 
 .messages-enter-done.active{
     transform: translateX(0%);
+    opacity: 1;
+}
+
+.message_cover{
+    margin-left: 15px;
+    font-size: 15px;
+    color: dimgray;
 }
 
 .message{
-     color: black;
-     font-size: 19px;
+    color: black;
+    font-size: 19px;
+
  }
